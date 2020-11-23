@@ -61,4 +61,5 @@ def main():
         if chosen_country_num != -1:
             break;
     print_chosen_num(country_infos, chosen_country_num)
+    
 main()
