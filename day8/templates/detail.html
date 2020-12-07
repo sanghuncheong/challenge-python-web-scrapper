@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nomad News | {{content.title}}</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  <script data-dapp-detection></script>
+</head>
+
+<body cz-shortcut-listen="True">
+    <header>
+        <h1>{{content.title}}</h1>
+        <div>
+            {{content.point}} points | By: {{content.author}} |
+            <a href="{{content.url}}" target="_blank">{{content.url}}</a>
+        </div>
+    </header>
+    <main>
+        {% for comment in comments_info %}
+        <div>
+            <strong>{{comment.author}}</strong>
+            <p></p>
+            <p>{{comment.text|safe}}</p>
+            <p></p>
+        </div>
+        <hr>
+        {% endfor%}
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Remote Jobs
+        </title>
+        <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+        <script data-dapp-detection></script> 
+    </head>
+<body cz-shortcut-listen="true">
+    <header>
+        <h1>Remote Jobs</h1>
+        <h3>{{resultsNumber}} {{searchingBy}} jobs found.</h3>
+        <a href="/export?word={{searchingBy}}">Export to CSV</a>
+        <h5><a href="/">Go back</a></h5>
+    </header>
+    <main>
+        {% for content in contents_info %}
+        <div>
+            <h3>{{content.title}}</h3>
+            <h3>{{content.company}}</h3>
+            <a href="{{content.apply_link}}" target="_blank">Apply</a>
+        </div>
+        <hr>
+        {% endfor%}
+    </main>
+</body>
+
+</html>

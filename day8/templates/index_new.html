@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nomad News | New</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body cz-shortcut-listen="True">
+    <header>
+        <h1>Nomad News</h1>
+
+        <div>Order by:
+            <a href="/?order_by=popular">Popular</a>
+            |
+            <strong>New</strong>
+        </div>
+        
+    </header>
+    <main>
+        {% for content in contents_info %}
+        <div>
+            <a href="/<id>={{content.objectID}}">
+                <h3>{{content.title}}</h3>
+            </a>
+            (
+            <a href="{{content.url}}" target="_blanl">{{content.url}}</a>
+            )
+        </div>
+        <div>
+            {{content.points}} points | By: {{content.author}} | {{content.num_comments}} comments
+        </div>
+        <hr>
+        {% endfor%}
+    </main>
+</body>
+
+</html>

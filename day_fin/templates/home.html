@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Remote Jobs
+        </title>
+        <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+        <script data-dapp-detection></script> 
+    </head>
+<body cz-shortcut-listen="true">
+    <header>
+        <h1>Remote Jobs</h1>
+    </header>
+    <main>
+        <form action="/report" method="get">
+            <h2>Search by term</h2>
+            <input placeholder="i.e python" required name="word" />
+            <button>Find my job</button>
+        </form>
+        <form action="/read">
+            <ul>
+                {%for db in db_set%}
+                <li>
+                    <h3>You have tried: 
+                        <a href="/report?word={{db.key}}">
+                            <label for="{{db.key}}">
+                                {{db.key}} : {{db.len}} jobs 
+                            </label>
+                        </a>
+                    </h3>
+                </li>
+                {%endfor%}
+            </ul>
+        </form>
+    </main>
+</body>
+
+</html>
